@@ -1,4 +1,17 @@
 # hsi_UMAP
 umap for geospatial applications
 
-https://github.com/user-attachments/assets/12f33b4d-613e-4029-8ea7-4daf52b3891c
+requirements: 
+- conda env create -f umap39.yml
+
+1. inputs:
+   - attributed shapefile of vegetation ROIs
+   - georeferenced multispectral imagery (geotiff, ENVI, etc.)
+   - species lookup table (csv)
+   - wavelength list
+2. outputs:
+   - 3D visualization
+   - ROI statistics
+
+https://github.com/user-attachments/assets/b3410c47-33da-428b-ad92-44594dfd7815
+
