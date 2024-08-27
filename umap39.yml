@@ -1,0 +1,15 @@
+name: umap39
+channels:
+  - conda-forge
+dependencies:
+  - umap-learn
+  - rasterio
+  - bokeh
+  - plotly
+  - pandas
+  - fiona
+  - pyshp
+  - datashader
+  - holoviews
+  - scikit-learn
+  - scipy
