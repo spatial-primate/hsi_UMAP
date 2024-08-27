@@ -3,11 +3,11 @@ import rasterio
 import fiona
 import os
 
+# check pyproj
 import pyproj
-if os.path.isdir(r'C:\Users\!lbrown\Miniconda3\envs\hsi36\Library\share\proj'):
-    pyproj.datadir.set_data_dir(r'C:\Users\!lbrown\Miniconda3\envs\hsi36\Library\share\proj')
-else:
-    pyproj.datadir.set_data_dir(r'C:\ProgramData\Miniconda3\envs\hsi36\Library\share\proj')
+if os.environ['CONDA_DEFAULT_ENV'] not in pyproj.datadir.get_data_dir():
+    pyproj.datadir.set_data_dir(os.path.join(os.environ['GDAL_DATA'], "../proj"))
+    assert os.path.isdir(os.path.join(os.environ['GDAL_DATA'], "../proj"))
 
 import numpy as np
 import pandas as pd
@@ -15,7 +15,7 @@ import rasterio.mask as rmsk
 import matplotlib.pyplot as plt
 import seaborn as sns
 import geopandas as gpd
-# import plotly.express as px
+import plotly.express as px
 
 from rasterio.vrt import WarpedVRT
 
@@ -30,13 +30,6 @@ from bokeh.plotting import figure, show
 from bokeh.models import HoverTool, CustomJS, ColumnDataSource, Slider, Range1d
 from bokeh.layouts import column, row, gridplot
 from bokeh.tile_providers import CARTODBPOSITRON, get_provider
-
-# todo: hsi39 import conflict bokeh & umap.plot regarding registering colormap
-# todo: chip_d_ss currently dislikes derived bands
-# todo: hsi39 import conflict bokeh & umap.plot regarding registering colormap
-# todo: extend spectral signature plotter to have a clickable legend
-# todo: hover tool extend to polygon FIDs
-# todo: lasso tool coupled to highlight polygons
 
 
 def rgb_to_hex(red, green, blue):
