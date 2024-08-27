@@ -6,7 +6,8 @@ dependencies:
   - rasterio
   - bokeh
   - plotly
-  - pandas
+  - geopandas
+  - seaborn
   - fiona
   - pyshp
   - datashader
