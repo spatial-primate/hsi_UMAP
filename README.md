@@ -1,8 +1,8 @@
-# hsi_UMAP
+# Hyperspectral UMAP visualization notebook
 umap for geospatial applications
 
 requirements: 
-- conda env create -f umap39.yml
+`conda env create -f umap39.yml`
 
 1. inputs:
    - attributed shapefile of vegetation ROIs
